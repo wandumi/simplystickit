@@ -17,21 +17,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="profile" href="https://gmpg.org/xfn/11" />
-   <?php wp_head() ?>
+   <?php wp_head(); ?>
 </head>
-<body <?php body_class() ?> >
+<body <?php body_class(); ?> >
     <div id="page" class="site">
         <header>
-            <section class="top-bar">
-                <div class="container">
-                    <div class="row">
-                        <div class="brand col-3 col-sm-6">Logo</div>
-                        <div class="main-menu col-6 col-md-6">Menus</div>
-                        <div class="account col-3 col-md-12">SignIn/SignOut</div>
-                    </div>
-                </div>
-            </section>
-            <section class="search">
+            <section class="search container mt-5">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4"></div>
@@ -44,6 +35,23 @@
                             </form>
                         </div>
                         <div class="col-md-4"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="top-bar mt-4">
+                <div class="container">
+                    <div class="row">
+                        <div class="brand col-3">Logo</div>
+                        <div class="main-menu col-6">
+                            <?php
+                                wp_nav_menu(
+                                    array(
+                                        'theme_location' => 'simply_stickit_main_menu'
+                                    )
+                                );
+                            ?>
+                        </div>
+                        <div class="account col-3">SignIn/SignOut</div>
                     </div>
                 </div>
             </section>

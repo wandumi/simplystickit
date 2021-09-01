@@ -13,13 +13,33 @@
      * @since 1.0.0
      */
 
+    
     function simply_stickit_scripts()
     {
-        wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/inc/boostrap.min.js', array( 'jquery' ), '4.6.0', true );
-        wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/inc/boostrap.min.css', array(), '4.6.0', 'all' );
+        wp_enqueue_script( 'main-js', get_template_directory_uri() . '/inc/js/bootstrap.min.js', array( 'jquery' ), '4.6.0', true );
+        wp_enqueue_style( 'main-css', get_template_directory_uri() . '/inc/css/bootstrap.min.css', array(), '4.6.0', 'all' );
 
         // Theme main style
-        wp_enqueue_style( 'simply-stickit-style', get_stylesheet_uri(), array(), filemtime( get_template_directory().'/style.css' ), 'all' );
+        wp_enqueue_style( 'simply-stickit-style', get_stylesheet_uri(), array(), filemtime( get_template_directory().'/inc/css/style.css' ), 'all' );
     }
 
     add_action('wp_enqueue_scripts', 'simply_stickit_scripts');
+
+    /**
+     * [simply_stickit_config description]
+     *
+     * Menus sections
+     * @return  [type]  [return description]
+     */
+    function simply_stickit_config()
+    {
+        register_nav_menus(
+            array(
+                'simply_stickit_main_menu' => 'Simply Stickit Main Menu',
+                'simply_stickit_top_menu'  => 'Simply Stickit Top Menu',
+                'simply_stickit_footer_menu' => 'Simply Stickit Footer Menu'
+            )
+        );
+    }
+
+    add_action( 'after_setup_theme', 'simply_stickit_config');
