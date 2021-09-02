@@ -24,7 +24,7 @@ get_header( 'shop' );
 <div class="container">
 
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-4 order-2 order-md-1">
                 <?php 
                     /**
                      * Hook: woocommerce_sidebar.
@@ -37,7 +37,7 @@ get_header( 'shop' );
                 ?>
             </div>
 
-            <div class="col-md-9">
+            <div class="col-lg-9 col-md-8 order-1 order-md-2">
 
                 
                 <?php
