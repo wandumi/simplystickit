@@ -51,7 +51,7 @@
                                 );
                             ?>
                         </div>
-                        <div class="account col-3">SignIn/SignOut</div>
+                        <div class="account col-3 text-md-right text-center">SignIn / SignOut</div>
                     </div>
                 </div>
             </section>

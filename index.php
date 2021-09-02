@@ -41,6 +41,32 @@
                     </div>
                 </div>
             </section> <!-- end of the featured product -->
+
+            <section class="default_posts">
+                <div class="container">
+                    <div class="row">
+                        <article>
+                            <p class="font-weight-bold">The posts should show here</p>
+                        </article>
+                    </div>
+                    <div class="row">
+                        
+                        <?php 
+                            if( have_posts() ) : while( have_posts() ): the_post(); ?>
+
+                                <article>
+                                    <h2 class="text-black"><?php the_title(); ?></h2>
+                                    <div><?php the_content(); ?></div>
+                                </article>
+
+                        <?php endwhile; else: ?>
+
+                            <p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </section> <!-- end of the featured product -->
             
             
         </main>
