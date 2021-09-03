@@ -33,6 +33,9 @@
      */
     function simply_stickit_config()
     {
+        /**
+         * Configurations for the menu
+         */
         register_nav_menus(
             array(
                 'simply_stickit_main_menu' => 'Simply Stickit Main Menu',
@@ -41,6 +44,9 @@
             )
         );
 
+        /**
+         * Adding support for woocommerce
+         */
         add_theme_support( 'woocommerce', array(
             'thumbnail_image_width' => 255,
             'single_image_width' => 255,
@@ -57,6 +63,14 @@
         add_theme_support( 'wc-product-gallery-zoom' );
         add_theme_support( 'wc-product-gallery-lightbox' );
         add_theme_support( 'wc-product-gallery-slider' );
+
+        if( !isset( $content_width ))
+        {
+            $content_width = 600;
+        }
     }
 
-    add_action( 'after_setup_theme', 'simply_stickit_config');
+    /**
+     * Require the woocommerce modifications
+     */
+    require get_template_directory() . '/inc/wc-modifications.php';
