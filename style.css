@@ -88,3 +88,7 @@
 /**
 *The woocomerce pagination
 */
+
+.woocommerce-cart table.cart td.actions .coupon .input-text {
+    width: 150px;
+}

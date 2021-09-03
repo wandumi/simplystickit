@@ -72,5 +72,9 @@
 
     /**
      * Require the woocommerce modifications
+     * Check if woocommerce is installed 
      */
-    require get_template_directory() . '/inc/wc-modifications.php';
+    if( class_exists('WooCommerce' ))
+    {
+        require get_template_directory() . '/inc/woocommerce/wc-modifications.php';
+    }
