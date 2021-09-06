@@ -14,6 +14,10 @@
 
 /* */
 
+body {
+    font-family: 'Lato', sans-serif;
+}
+
 .main_menu {
     padding: 0;
 }
@@ -40,7 +44,50 @@
 }
 
 
+/**
+*Drop down on the menu item
+*/
+
+.main-menu .dropdown:hover>.dropdown-menu,
+.main-menu .dropup:hover>.dropdown-menu {
+    display: block;
+}
+
+
+/* Cart image  */
+
+
+/* Change the background image of the menu */
+
+.main-menu .navbar-toggler-icon {
+    background-image: url('images/hamburger-menu.svg');
+}
+
+
 /* end of main menu */
+
+.cart .cart-icon {
+    background: url('images/cart.svg');
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    vertical-align: bottom;
+    color: beige;
+}
+
+.cart .items {
+    background-color: #986db4;
+    color: #fff;
+    width: 20px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+}
 
 
 /* start of footer */
@@ -62,12 +109,12 @@
 }
 
 .footer-menu ul li a {
-    color: pink;
+    color: #f287b4;
     text-decoration: none;
 }
 
 .footer-menu ul li.current-menu-item a {
-    color: #ff9292;
+    color: #f287b4;
 }
 
 
@@ -85,10 +132,67 @@
 }
 
 
+/* Search Styles */
+
+.search-form button {
+    background-image: url();
+    height: 23px;
+    width: 23px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+}
+
+.search-form input[type="search"] {
+    background-color: #efefef;
+    border: none;
+    font-weight: 500;
+    font-size: 110%;
+    padding: 0.3rem 1rem;
+    margin-right: 0.3rem;
+}
+
+
 /**
 *The woocomerce pagination
 */
 
 .woocommerce-cart table.cart td.actions .coupon .input-text {
     width: 150px;
+}
+
+.woocommerce form .form-row {
+    display: block;
+}
+
+.woocommerce-checkout #customer_details {
+    margin-bottom: 20px;
+}
+
+.woocommerce table.shop_table {
+    border-collapse: collapse;
+}
+
+.woocommerce table.shop_table thead {
+    background-color: #d23358;
+    color: #fff;
+}
+
+
+/**
+* Checkout page 
+*/
+
+.woocommerce .col2-set .col-1,
+.woocommerce .col2-set .col-2 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+@media all and (max-width: 767px) {
+    .woocommerce .col2-set .col-1,
+    .woocommerce .col2-set .col-2 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
