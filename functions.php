@@ -50,10 +50,10 @@
          */
         register_nav_menus(
             array(
-                // 'simply_stickit_main_menu' => 'Simply Stickit Main Menu',
-                // 'simply_stickit_top_menu'  => 'Simply Stickit Top Menu',
-                // 'simply_stickit_footer_menu' => 'Simply Stickit Footer Menu'
-                'primary' => __( 'simply_stickit_main_menu', 'Simply Stickit Main Menu' ),
+                'simply_stickit_main_menu' => 'Simply Stickit Main Menu',
+                'simply_stickit_top_menu'  => 'Simply Stickit Top Menu',
+                'simply_stickit_footer_menu' => 'Simply Stickit Footer Menu'
+                // 'primary' => __( 'simply_stickit_main_menu', 'Simply Stickit Main Menu' ),
             )
         );
 
@@ -77,11 +77,20 @@
         add_theme_support( 'wc-product-gallery-lightbox' );
         add_theme_support( 'wc-product-gallery-slider' );
 
+        add_theme_support( 'custom-logo', array(
+            'height'      => 152,
+            'width'       => 450,
+            'flex_height' => true,
+            'flex_width'  => true
+        ));
+
         if( !isset( $content_width ))
         {
             $content_width = 600;
         }
     }
+
+    add_action( 'after_setup_theme', 'simply_stickit_config' );
 
     /**
      * Require the woocommerce modifications
@@ -92,11 +101,7 @@
         require get_template_directory() . '/inc/woocommerce/wc-modifications.php';
     }
 
-    /**
-     * Show cart contents / total Ajax
-     */
-    add_filter( 'woocommerce_add_to_cart_fragments', 'simply_stickit_woocommerce_header_add_to_cart_fragment' );
-
+    
     function simply_stickit_woocommerce_header_add_to_cart_fragment( $fragments ) {
         global $woocommerce;
 
@@ -108,3 +113,8 @@
         $fragments['span.items'] = ob_get_clean();
         return $fragments;
     }
+
+    /**
+     * Show cart contents / total Ajax
+     */
+    add_filter( 'woocommerce_add_to_cart_fragments', 'simply_stickit_woocommerce_header_add_to_cart_fragment' );

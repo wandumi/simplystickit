@@ -21,7 +21,7 @@
 </head>
 <body <?php body_class(); ?> >
     <div id="page" class="site">
-        <header>
+        <header class="mb-3">
             <!-- <section class="search">
                 <div class="container">
                     <div class="text-center d-md-flex align-items-center">
@@ -33,7 +33,9 @@
             <section class="top-bar mt-4">
                 <div class="container">
                     <div class="row">
-                        <div class="brand col-md-3 col-12 col-lg-2 text-center text-md-left">Logo</div>
+                        <div class="brand col-md-3 col-12 col-lg-2 text-center text-md-left">
+                            <?php the_custom_logo(); ?>
+                        </div>
                         <div class="second-column col-md-9 col-12 col-lg-10">
                             <div class="row">
                                 <div class="col-md-12">
@@ -57,18 +59,18 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="row">
-                                        <div class="col-9">
+                                        <div class="col-9 col-md-6">
                                             <nav class="main_menu navbar navbar-expand-md navbar-light" role="navigation">
                                                 
                                                     <!-- Brand and toggle get grouped for better mobile display -->
-                                                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'your-theme-slug' ); ?>">
+                                                    <button class="navbar-toggler ml-lg-auto" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'your-theme-slug' ); ?>">
                                                         <span class="navbar-toggler-icon"></span>
                                                     </button>
                                                 
                                                         <?php
                                                             wp_nav_menu( array(
                                                                 'theme_location'    => 'simply_stickit_main_menu',
-                                                                'depth'             => 3, //levels of the menu dropdowns
+                                                                'depth'             => 3, 
                                                                 'container'         => 'div',
                                                                 'container_class'   => 'collapse navbar-collapse',
                                                                 'container_id'      => 'bs-example-navbar-collapse-1',
@@ -81,7 +83,7 @@
                                             </nav>
     
                                         </div>
-                                        <div class="account col-3 ">
+                                        <div class="account col-3 col-md-6 ">
                                             <div class="cart text-right">
                                                 <a href="<?php echo wc_get_cart_url() ?>"><span class="cart-icon"></span></a>
                                                 <span class="items"><?php echo WC()->cart->get_cart_contents_count() ?></span>
