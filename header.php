@@ -22,23 +22,39 @@
 <body <?php body_class(); ?> >
     <div id="page" class="site">
         <header class="mb-3">
-            <!-- <section class="search">
-                <div class="container">
-                    <div class="text-center d-md-flex align-items-center">
-                        <?php /*get_search_form(); */?>
-
-                    </div>
-                </div>
-            </section> -->
+           
             <section class="top-bar mt-4">
-                <div class="container">
-                    <div class="row">
-                        <div class="brand col-md-3 col-12 col-lg-2 text-center text-md-left">
-                            <?php the_custom_logo(); ?>
+                <div class="container ">
+                    <div class="row mb-md-4">
+                        <div class="brand col-lg-6 col-md-12 order-sm-last order-lg-1">
+                            <a href="<?php echo home_url( '/' ) ?>" >
+                            <?php if( has_custom_logo() ) : ?>
+                                <?php the_custom_logo(); ?>
+                            <?php else: ?>
+                                <p class="site-title">
+                                    <?php bloginfo( 'title' ) ?>
+                                    <span><?php bloginfo('description') ?></span>
+                                </p>
+                            <?php endif ?>
+                            </a>
                         </div>
-                        <div class="second-column col-md-9 col-12 col-lg-10">
+                        
+                        <div class="col-lg-6 col-md-12 order-sm-first order-lg-2">
+                            <span class="text-right">
+                                <?php get_search_form(); ?>
+
+                            </span>
+
+                        </div>
+                       
+                    </div>
+            </section>
+            <section>
+                <div class="container ">
+                    <div class="row mb-md-4">
+                        <div class="second-column col-md-9 col-lg-12 mt-4">
                             <div class="row">
-                                <div class="col-md-12">
+                                <!-- <div class="col-md-12">
                                     <div class="navbar-expand">
                                         <ul class="navbar-nav float-left">
                                             <?php if( is_user_logged_in() ) : ?>
@@ -56,7 +72,7 @@
                                         </ul>
                                     </div>
 
-                                </div>
+                                </div> -->
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-9 col-md-6">
@@ -84,7 +100,7 @@
     
                                         </div>
                                         <div class="account col-3 col-md-6 ">
-                                            <div class="cart text-right">
+                                            <div class="cart float-right">
                                                 <a href="<?php echo wc_get_cart_url() ?>"><span class="cart-icon"></span></a>
                                                 <span class="items"><?php echo WC()->cart->get_cart_contents_count() ?></span>
                                             </div>

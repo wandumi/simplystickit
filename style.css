@@ -109,12 +109,17 @@ body {
 }
 
 .footer-menu ul li a {
-    color: #f287b4;
+    color: #000;
     text-decoration: none;
 }
 
 .footer-menu ul li.current-menu-item a {
-    color: #f287b4;
+    color: #000;
+}
+
+.footer-menu ul li.current-menu-item a:active {
+    background-color: #f287b4;
+    color: #fff;
 }
 
 
@@ -195,4 +200,7 @@ body {
         flex: 0 0 100%;
         max-width: 100%;
     }
+    /**
+    *search form
+    */
 }
