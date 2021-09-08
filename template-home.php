@@ -7,32 +7,83 @@
     get_header(); 
 
 ?>
-    <div class="content-area">
+    <div >
         <main>
-            <section class="slider">
-                <div class="container">
-                    <div class="row">
-                        Slider
-                    </div>
+            <section class="slider mb-5">
+                <!-- Flex slider  -->
+                <div class="flexslider">
+                    <ul class="slides">
+                        <?php 
+                            /**
+                             * loop through the slider stored in the database 
+                             * Reference the customizer
+                             * */
+                            for ($i=1; $i < 4; $i++) : 
+                                $slider_page[$i]            = get_theme_mod( 'set_slider_page'. $i );
+                                $slider_button_text[$i]     = get_theme_mod( 'set_slider_button_text'. $i );
+                                $slider_button_url[$i]      = get_theme_mod( 'set_slider_button_url'. $i );
+                            endfor;
+
+                            // query parameters of the slider
+                            $args = array(
+                                'post_type'     => 'page',
+                                'post_per_page' => 3,
+                                'post__in'      => $slider_page,
+                                'orderby'       => 'post__in',
+                            );
+
+                            // query the database
+                            $slider_loop = new WP_Query( $args );
+
+                            // var_dump($slider_loop);
+
+                            $j = 0;
+
+                            // loop through the result
+                            if (  $slider_loop->have_posts() ):
+                                while(  $slider_loop->have_posts() ):
+                                     $slider_loop->the_post();
+                        ?>
+                            <li>
+                                <!-- Calling the Settings of the images from the functions.php settings -->
+                                <?php the_post_thumbnail( 'medium')  ; ?>
+                                <div class="container">
+                                    <div class="slider-details-container">
+                                        <div class="slider-title">
+                                            <h1><?php the_title(); ?></h1>
+                                        </div>
+                                        <div class="slider-description">
+                                            <div class="subtitle">
+                                                <?php the_content(); ?>
+                                            </div>
+                                            <a href="<?php echo $slider_button_url[$j]; ?>" class="link">
+                                                <?php echo $slider_button_text[$j]; ?>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        <?php
+                            $j++;
+                                endwhile;
+                                wp_reset_postdata();
+                            endif;
+                        ?>
+                    </ul>
                 </div>
             </section><!-- end of the slider --> 
 
-            <section class="categories">
+            <section class="categories mt-4">
                 <div class="container">
-                    <div class="row">
-                        List of the categories
-                    </div>
+                    
+                    <h2>Product Categories</h2>
+                    
+                    <?php echo do_shortcode( '[product_categories limit="12" columns="4" orderby="popularity" ]' ) ?>
+                    
                 </div>
             </section> <!--end of the main page -->
 
-            <section class="featured_product">
-                <div class="container">
-                    <div class="row">
-                        Featured Product
-                    </div>
-                </div>
-            </section> <!-- end of the featured product -->
-            
+          
             
             
         </main>

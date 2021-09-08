@@ -22,6 +22,8 @@
     }
     
     add_action( 'after_setup_theme', 'register_navwalker' );
+
+    require_once get_template_directory() . '/inc/customizer.php';
     
     function simply_stickit_scripts()
     {
@@ -33,6 +35,10 @@
             | https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet');
         // Theme main style
         wp_enqueue_style( 'simply-stickit-style', get_stylesheet_uri(), array(), filemtime( get_template_directory().'/inc/css/style.css' ), 'all' );
+
+        wp_enqueue_script( 'flexslider-min-js', get_template_directory_uri() . '/inc/flexslider/jquery.flexslider-min.js', array( 'jquery' ), '', true );
+        wp_enqueue_style( 'flexslider-css', get_template_directory_uri() . '/inc/flexslider/flexslider.css', array(), '', 'all' );
+        wp_enqueue_script( 'flexslider.js', get_template_directory_uri() . '/inc/flexslider/flexslider.js', '', true );
     }
 
     add_action('wp_enqueue_scripts', 'simply_stickit_scripts');
@@ -53,7 +59,7 @@
                 'simply_stickit_main_menu' => 'Simply Stickit Main Menu',
                 'simply_stickit_top_menu'  => 'Simply Stickit Top Menu',
                 'simply_stickit_footer_menu' => 'Simply Stickit Footer Menu'
-                // 'primary' => __( 'simply_stickit_main_menu', 'Simply Stickit Main Menu' ),
+               
             )
         );
 
@@ -73,16 +79,21 @@
             )
         ) );
 
+        // woocommerce image size
         add_theme_support( 'wc-product-gallery-zoom' );
         add_theme_support( 'wc-product-gallery-lightbox' );
         add_theme_support( 'wc-product-gallery-slider' );
 
+        // custome log sizez
         add_theme_support( 'custom-logo', array(
             'height'      => 152,
-            'width'       => 450,
+            'width'       => 210,
             'flex_height' => true,
             'flex_width'  => true
         ));
+
+        // flexslider image sizes
+        add_image_size( 'simply-stickit-slider', 1980, 800, array( 'center', 'center'));
 
         if( !isset( $content_width ))
         {

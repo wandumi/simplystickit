@@ -26,7 +26,7 @@
             <section class="top-bar mt-4">
                 <div class="container ">
                     <div class="row mb-md-4">
-                        <div class="brand col-lg-6 col-md-12 order-sm-last order-lg-1">
+                        <div class="brand col-lg-6 col-md-12 col-sm-12 order-sm-last order-md-last order-lg-1">
                             <a href="<?php echo home_url( '/' ) ?>" >
                             <?php if( has_custom_logo() ) : ?>
                                 <?php the_custom_logo(); ?>
@@ -39,7 +39,7 @@
                             </a>
                         </div>
                         
-                        <div class="col-lg-6 col-md-12 order-sm-first order-lg-2">
+                        <div class="col-lg-6 col-md-12 col-sm-12 order-sm-first order-md-first order-lg-2">
                             <span class="text-right">
                                 <?php get_search_form(); ?>
 
