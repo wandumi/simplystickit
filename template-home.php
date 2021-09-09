@@ -74,11 +74,19 @@
             </section><!-- end of the slider --> 
 
             <section class="categories mt-4">
+
+                <?php
+                    $number_of_categories = get_theme_mod('set_categories_max_num', 4);
+                    $columns_of_categories = get_theme_mod('set_categories_max_col',4);
+                ?>
                 <div class="container">
                     
                     <h2>Product Categories</h2>
                     
-                    <?php echo do_shortcode( '[product_categories limit="12" columns="4" orderby="popularity" ]' ) ?>
+                  
+                    <?php echo do_shortcode( '[product_categories limit=" '. $number_of_categories .' " columns=" '. $columns_of_categories .' " orderby="popularity" ]' ) ?>
+
+                   
                     
                 </div>
             </section> <!--end of the main page -->

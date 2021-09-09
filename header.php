@@ -21,15 +21,18 @@
 </head>
 <body <?php body_class(); ?> >
     <div id="page" class="site">
-        <header class="mb-3">
+        <header>
            
-            <section class="top-bar mt-4">
+            <section class="top-bar m-3">
                 <div class="container ">
-                    <div class="row mb-md-4">
+                    <div class="row ">
                         <div class="brand col-lg-6 col-md-12 col-sm-12 order-sm-last order-md-last order-lg-1">
                             <a href="<?php echo home_url( '/' ) ?>" >
-                            <?php if( has_custom_logo() ) : ?>
-                                <?php the_custom_logo(); ?>
+                            
+
+                                <?php if( has_custom_logo() ) : ?>
+                                    <?php the_custom_logo(); ?>
+                            
                             <?php else: ?>
                                 <p class="site-title">
                                     <?php bloginfo( 'title' ) ?>
@@ -49,11 +52,11 @@
                        
                     </div>
             </section>
-            <section>
+            <section class="main-menu-container">
                 <div class="container ">
-                    <div class="row mb-md-4">
-                        <div class="second-column col-md-9 col-lg-12 mt-4">
-                            <div class="row">
+                    <div class="row">
+                        <div class="second-column col-md-9 col-lg-12">
+                            <div class="row p-2">
                                 <!-- <div class="col-md-12">
                                     <div class="navbar-expand">
                                         <ul class="navbar-nav float-left">
@@ -100,7 +103,7 @@
     
                                         </div>
                                         <div class="account col-3 col-md-6 ">
-                                            <div class="cart float-right">
+                                            <div class="cart float-right pt-2">
                                                 <a href="<?php echo wc_get_cart_url() ?>"><span class="cart-icon"></span></a>
                                                 <span class="items"><?php echo WC()->cart->get_cart_contents_count() ?></span>
                                             </div>

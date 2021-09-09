@@ -37,6 +37,54 @@
                 )
             );
 
+             /**
+             * Woocommerce homepage for categories
+             */
+            $wp_customize->add_section(
+                'sec_home_page', array(
+                    'title'       => 'Homepage Product Categories',
+                    'description' => 'Homepage Section'
+                )
+            );
+
+            //Field 1 - Copyright Text Box
+            $wp_customize->add_setting(
+                'set_categories_max_num', array(
+                    'type'                => 'theme_mod',
+                    'default'             => '',
+                    'sanitize_callback'   => 'absint' 
+                )
+            );
+
+            //add the control to the customizer
+            $wp_customize->add_control(
+                'set_categories_max_num', array(
+                    'label'             => 'Number of Categories to show',
+                    'description'       => 'How many categories',
+                    'section'           => 'sec_home_page',
+                    'type'              => 'number'
+                )
+            );
+
+            //Field 1 - Copyright Text Box
+            $wp_customize->add_setting(
+                'set_categories_max_col', array(
+                    'type'                => 'theme_mod',
+                    'default'             => '',
+                    'sanitize_callback'   => 'absint' 
+                )
+            );
+
+            //add the control to the customizer
+            $wp_customize->add_control(
+                'set_categories_max_col', array(
+                    'label'             => 'Number columns of Categories to show',
+                    'description'       => 'How many columns of categories',
+                    'section'           => 'sec_home_page',
+                    'type'              => 'number'
+                )
+            );
+
             /**
              * Customizer for the slider 
              *

@@ -23,7 +23,14 @@
     
     add_action( 'after_setup_theme', 'register_navwalker' );
 
+    /**
+     * Register Customizer file
+     */
     require_once get_template_directory() . '/inc/customizer.php';
+
+    /**
+     * Add Scripts and Styles
+     */
     
     function simply_stickit_scripts()
     {
@@ -59,7 +66,6 @@
                 'simply_stickit_main_menu' => 'Simply Stickit Main Menu',
                 'simply_stickit_top_menu'  => 'Simply Stickit Top Menu',
                 'simply_stickit_footer_menu' => 'Simply Stickit Footer Menu'
-               
             )
         );
 
@@ -87,7 +93,7 @@
         // custome log sizez
         add_theme_support( 'custom-logo', array(
             'height'      => 152,
-            'width'       => 210,
+            'width'       => 0,
             'flex_height' => true,
             'flex_width'  => true
         ));
@@ -129,3 +135,44 @@
      * Show cart contents / total Ajax
      */
     add_filter( 'woocommerce_add_to_cart_fragments', 'simply_stickit_woocommerce_header_add_to_cart_fragment' );
+
+    /**
+     * Widgets and Sidebars
+     */
+
+    add_action( 'widgets_init','simply_stickit_sidebars');
+
+    function simply_stickit_sidebars()
+    {
+        register_sidebar(
+            array(
+                'name'             => 'Simply Stickit Main Sidebar',
+                'id'               => 'simply-stickit-sidebar-1',
+                'description'      => 'Drag and drop your widgets here',
+                'before_widget'    => '<div id="%1$s" class="widget %2$s widget-wrapper">',
+                'after_widget'     => '</div>',
+                'before_title'     => '<h1 class="widget-title',
+                'after_title'      => '</div>',
+            )
+        );
+
+        register_sidebar(
+            array(
+                'name'             => 'Sidebar Shop',
+                'id'               => 'simply-stickit-sidebar-shop',
+                'description'      => 'Drag and drop your WooCommerce widgets here',
+                'before_widget'    => '<div id="%1$s" class="widget %2$s widget-wrapper">',
+                'after_widget'     => '</div>',
+                'before_title'     => '<h1 class="widget-title',
+                'after_title'      => '</div>',
+            )
+        );
+
+
+
+
+
+
+
+
+    }

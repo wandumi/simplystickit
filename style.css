@@ -18,6 +18,14 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+.header .brand a {
+    width: 10vw;
+}
+
+.main-menu-container {
+    background-color: #f287b4;
+}
+
 .main_menu {
     padding: 0;
 }
@@ -185,13 +193,20 @@ body {
 
 
 /**
-* Checkout page 
+* WooCommerce Styles
 */
 
 .woocommerce .col2-set .col-1,
 .woocommerce .col2-set .col-2 {
     flex: 0 0 50%;
     max-width: 50%;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-category__title,
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.woocommerce ul.products li.product h3 {
+    font-size: 1.2em;
+    /* text-align: center; */
 }
 
 
@@ -261,13 +276,20 @@ body {
     margin: 0 2px !important;
 }
 
+
+/* Mobile menu  */
+
 @media all and (max-width: 767px) {
     .woocommerce .col2-set .col-1,
     .woocommerce .col2-set .col-2 {
         flex: 0 0 100%;
         max-width: 100%;
     }
-    /**
-    *search form
-    */
+    .custom-logo {
+        width: 100%;
+    }
+    .navbar-light .navbar-toggler {
+        color: white;
+        border-color: white;
+    }
 }

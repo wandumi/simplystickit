@@ -7,7 +7,7 @@
     get_header(); 
 
 ?>
-    <div class="content-area mt-5">
+    <div class="content-area">
         <main>
             <section class="default_posts">
                 <div class="container">
@@ -31,6 +31,7 @@
 
                         <?php endif ?>
                     </div>
+                    <?php get_sidebar(); ?>
                 </div>
             </section> <!-- end of the featured product -->
             
