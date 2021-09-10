@@ -26,7 +26,7 @@
             <section class="top-bar m-3">
                 <div class="container ">
                     <div class="row ">
-                        <div class="brand col-lg-6 col-md-12 col-sm-12 order-sm-last order-md-last order-lg-1">
+                        <div class="brand col-lg-6 col-md-12 col-sm-12">
                             <a href="<?php echo home_url( '/' ) ?>" >
                             
 
@@ -42,27 +42,15 @@
                             </a>
                         </div>
                         
-                        <div class="col-lg-6 col-md-12 col-sm-12 order-sm-first order-md-first order-lg-2">
-                            <span class="text-right">
-                                <?php get_search_form(); ?>
-
-                            </span>
-
-                        </div>
-                       
-                    </div>
-            </section>
-            <section class="main-menu-container">
-                <div class="container ">
-                    <div class="row">
-                        <div class="second-column col-md-9 col-lg-12">
-                            <div class="row p-2">
-                                <!-- <div class="col-md-12">
+                        <div class="col-lg-6 col-md-12 col-sm-12 ">
+                            <div class="row">
+                                <div class="col-md-4">
+                               
                                     <div class="navbar-expand">
-                                        <ul class="navbar-nav float-left">
+                                        <ul class="navbar-nav">
                                             <?php if( is_user_logged_in() ) : ?>
                                                 <li >
-                                                    <a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id'))   ); ?>" class="nav-link">My Account</a>
+                                                    <a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id'))   ); ?>" class="nav-link">Dashboard</a>
                                                 </li>
                                                 <li >
                                                     <a href="<?php echo esc_url(  wp_logout_url( get_permalink( get_option( 'woocommerce_myaccount_page_id'))  )   ); ?>" class="nav-link">Logout</a>
@@ -75,7 +63,27 @@
                                         </ul>
                                     </div>
 
-                                </div> -->
+                                </div>
+                               <div class="col-lg-8">
+                                   <div class="float-right">
+                                       <?php get_search_form(); ?>
+       
+                                   </div>
+
+                               </div>
+                            </div>
+
+                        </div>
+                       
+                    </div>
+            </section>
+
+            <section class="main-menu-container">
+                <div class="container ">
+                    <div class="row">
+                        <div class="second-column col-md-9 col-lg-12">
+                            <div class="row p-0">
+                               
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-9 col-md-6">
@@ -103,7 +111,7 @@
     
                                         </div>
                                         <div class="account col-3 col-md-6 ">
-                                            <div class="cart float-right pt-2">
+                                            <div class="cart float-right pt-4">
                                                 <a href="<?php echo wc_get_cart_url() ?>"><span class="cart-icon"></span></a>
                                                 <span class="items"><?php echo WC()->cart->get_cart_contents_count() ?></span>
                                             </div>

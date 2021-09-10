@@ -7,34 +7,30 @@
     get_header(); 
 
 ?>
-    <div class="content-area mt-5">
-        <main>
-            <section class="default_posts">
+    <div class="content-area">
+      
+            <mai>
                 <div class="container">
-                    <div class="row">
-                        <?php 
-                            if( have_posts() ) :
+                    <div class="row mt-5">
+                       
+                            <?php 
+                             
                                 while( have_posts() ): the_post();
-                        ?>
-
-                                        <article class="col">
-                                            <h1><?php the_title(); ?></h1>
-                                            <div><?php the_content(); ?></div>
-                                        </article>
-
-                        <?php
+                            ?>
+    
+                                    <article class="col">
+                                        <h1><?php the_title(); ?></h1>
+                                        <div><?php the_content(); ?></div>
+                                    </article>
+    
+                            <?php
                                 endwhile;
-
-                            else:
-                        ?>
-                        <p>Nothing to display.</p>
-
-                        <?php endif ?>
+                            ?>
+                       
                     </div>
                 </div>
-            </section> <!-- end of the featured product -->
-            
-        </main>
+            </main>
+
     </div>
 
 <?php get_footer(); ?>

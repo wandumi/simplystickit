@@ -1,16 +1,17 @@
 <?php 
     /**
      * The main template file
-     * 
-     * This is the most generic template file in a Wordpress theme
+     *
+     * This is the most generic template file in a WordPress theme
      * and one of the two required files for a theme (the other being style.css).
-     * It is used t display a page when nothing more specific matches a query.
+     * It is used to display a page when nothing more specific matches a query.
      * E.g., it puts together the home page when no home.php file exists.
-     * 
+     *
      * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
-     * 
-     * @packadge Simplystickit
-     * @since 1.0.0
+     *
+     * @package WordPress
+     * @subpackage Simply Stickit
+     * @since Simply Stickit 1.0
      */
 
     get_header(); 
@@ -18,52 +19,56 @@
 ?>
     <div class="content-area">
         <main>
-            <section class="slider">
-                <div class="container">
-                    <div class="row">
-                        Slider
-                    </div>
-                </div>
-            </section><!-- end of the slider --> 
-
-            <section class="categories">
-                <div class="container">
-                    <div class="row">
-                        List of the categories
-                    </div>
-                </div>
-            </section> <!--end of the main page -->
-
-            <section class="featured_product">
-                <div class="container">
-                    <div class="row">
-                        Featured Product
-                    </div>
-                </div>
-            </section> <!-- end of the featured product -->
-
+           
             <section class="default_posts">
                 <div class="container">
-                    <div class="row">
-                        <article>
-                            <p class="font-weight-bold">The posts should show here</p>
-                        </article>
-                    </div>
-                    <div class="row">
-                        
-                        <?php 
-                            if( have_posts() ) : while( have_posts() ): the_post(); ?>
+                   
+                    <div class="row mt-5">
+                        <div class="col-12">
 
-                                <article>
-                                    <h2 class="text-black"><?php the_title(); ?></h2>
-                                    <div><?php the_content(); ?></div>
-                                </article>
-
-                        <?php endwhile; else: ?>
-
-                            <p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
-
-                        <?php endif; ?>
+                            <?php 
+                                if( have_posts() ) : while( have_posts() ): the_post(); ?>
+    
+                                    <article <?php post_class(); ?> >
+                                        <h2 class="text-black">
+                                            <a href="<?php the_permalink(); ?>">
+                                                <?php the_title(); ?>
+                                            </a>    
+                                        </h2>
+                                        <div class="post-thumbnail">
+                                            <a href="<?php the_permalink(); ?>">
+                                                <?php 
+                                                    if( has_post_thumbnail() ) :
+                                                        the_post_thumbnail('full');
+                                                    endif;
+                                                ?>
+                                            </a> 
+                                        </div>
+                                        <div class="meta">
+                                            <p>Publish by <?php the_author_posts_link(); ?> on <?php echo get_the_date(); ?>
+                                            <?php if( has_category() ) : ?>
+                                                <br /><span><?php the_category( ' ' ); ?></span>
+                                            <?php endif; ?>
+                                            <?php if( has_tag( has_tag() ) ): ?>
+                                                Tags: <span><?php the_tags('', ','); ?></span>
+                                            <?php endif; ?>
+                                        </p>
+                                        </div>
+                                        <div><?php the_excerpt(); ?></div>
+                                    </article>
+    
+                            <?php endwhile;
+                                // Pagination for posts 
+                                the_posts_pagination( array(
+                                    'prev_text' => 'Previous',
+                                    'next_text' => 'Next'
+                                ) );
+                            else: ?>
+    
+                                <p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+    
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             </section> <!-- end of the featured product -->

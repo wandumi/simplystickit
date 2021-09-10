@@ -14,6 +14,11 @@
 
 /* */
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Lato', sans-serif;
 }
@@ -27,7 +32,7 @@ body {
 }
 
 .main_menu {
-    padding: 0;
+    padding: 10px 0px!important;
 }
 
 .main_menu ul {
@@ -291,5 +296,12 @@ body {
     .navbar-light .navbar-toggler {
         color: white;
         border-color: white;
+    }
+    .copyright {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .footer-menu {
+        text-align: center;
     }
 }
