@@ -98,6 +98,9 @@
             'flex_width'  => true
         ));
 
+        // Error page on the title
+        add_theme_support( 'title-tag' );
+
         // flexslider image sizes
         add_image_size( 'simply-stickit-slider', 1980, 800, array( 'center', 'center'));
 
