@@ -93,7 +93,7 @@
         // custome log sizez
         add_theme_support( 'custom-logo', array(
             'height'      => 152,
-            'width'       => 0,
+            'width'       => 250,
             'flex_height' => true,
             'flex_width'  => true
         ));
@@ -154,8 +154,8 @@
                 'description'      => 'Drag and drop your widgets here',
                 'before_widget'    => '<div id="%1$s" class="widget %2$s widget-wrapper">',
                 'after_widget'     => '</div>',
-                'before_title'     => '<h1 class="widget-title',
-                'after_title'      => '</div>',
+                'before_title'     => '<h4 class="widget-title',
+                'after_title'      => '</h4>',
             )
         );
 
@@ -166,8 +166,44 @@
                 'description'      => 'Drag and drop your WooCommerce widgets here',
                 'before_widget'    => '<div id="%1$s" class="widget %2$s widget-wrapper">',
                 'after_widget'     => '</div>',
-                'before_title'     => '<h1 class="widget-title',
-                'after_title'      => '</div>',
+                'before_title'     => '<h4 class="widget-title',
+                'after_title'      => '</h4>',
+            )
+        );
+
+        register_sidebar(
+            array(
+                'name'             => 'Footer Sidebar 1',
+                'id'               => 'simply-stickit-footer-1',
+                'description'      => 'Drag and drop your Footer Sidebar here',
+                'before_widget'    => '<div id="%1$s" class="widget %2$s widget-wrapper">',
+                'after_widget'     => '</div>',
+                'before_title'     => '<h4 class="widget-title',
+                'after_title'      => '</h4>',
+            )
+        );
+
+        register_sidebar(
+            array(
+                'name'             => 'Footer Sidebar 2',
+                'id'               => 'simply-stickit-footer-2',
+                'description'      => 'Drag and drop your Footer Sidebar here',
+                'before_widget'    => '<div id="%1$s" class="widget %2$s widget-wrapper">',
+                'after_widget'     => '</div>',
+                'before_title'     => '<h4 class="widget-title',
+                'after_title'      => '</h4>',
+            )
+        );
+
+        register_sidebar(
+            array(
+                'name'             => 'Footer Sidebar 3',
+                'id'               => 'simply-stickit-footer-3',
+                'description'      => 'Drag and drop your Footer Sidebar here',
+                'before_widget'    => '<div id="%1$s" class="widget %2$s widget-wrapper">',
+                'after_widget'     => '</div>',
+                'before_title'     => '<h4 class="widget-title',
+                'after_title'      => '</h4>',
             )
         );
 

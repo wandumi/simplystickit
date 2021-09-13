@@ -13,19 +13,22 @@
                 <div class="container">
                     <div class="row mt-5">
                        
+                       
+                       
+                       <div class="col-12 col-lg-12 col-md-8">
                             <?php 
                              
                                 while( have_posts() ): the_post();
-                            ?>
-    
-                                    <article class="col">
-                                        <h1><?php the_title(); ?></h1>
-                                        <div><?php the_content(); ?></div>
-                                    </article>
-    
-                            <?php
+
+                                    get_template_part( 'template-parts/content/content', 'page');
+                                    
                                 endwhile;
                             ?>
+
+                       </div>
+
+                       
+                       
                        
                     </div>
                 </div>

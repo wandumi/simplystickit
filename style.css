@@ -23,6 +23,12 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+.post {
+    background-color: #efefef;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
 .header .brand a {
     width: 10vw;
 }

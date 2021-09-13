@@ -111,7 +111,7 @@
     
                                         </div>
                                         <div class="account col-3 col-md-6 ">
-                                            <div class="cart float-right pt-4">
+                                            <div class="cart float-right pt-3">
                                                 <a href="<?php echo wc_get_cart_url() ?>"><span class="cart-icon"></span></a>
                                                 <span class="items"><?php echo WC()->cart->get_cart_contents_count() ?></span>
                                             </div>

@@ -1,59 +1,40 @@
 <?php
 /**
- * Template part for displaying posts
+ * Template part for displaying page content in index.php
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package WordPress
- * @subpackage Twenty_Nineteen
- * @since Twenty Nineteen 1.0
+ * @package Simply Stickit
+
  */
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_sticky() && is_home() && ! is_paged() ) {
-			printf( '<span class="sticky-post">%s</span>', _x( 'Featured', 'post', 'twentynineteen' ) );
-		}
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
-		endif;
-		?>
-	</header><!-- .entry-header -->
 
-	<?php twentynineteen_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Post title. Only visible to screen readers. */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentynineteen' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			)
-		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'twentynineteen' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php twentynineteen_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+<article <?php post_class(); ?> class="card">
+	<h2 class="text-black">
+		<a href="<?php the_permalink(); ?>">
+			<?php the_title(); ?>
+		</a>    
+	</h2>
+	<div class="post-thumbnail">
+		<a href="<?php the_permalink(); ?>">
+			<?php 
+				if( has_post_thumbnail() ) :
+					the_post_thumbnail('full');
+				endif;
+			?>
+		</a> 
+	</div>
+	<div class="meta">
+		<p>Publish by <?php the_author_posts_link(); ?> on <?php echo get_the_date(); ?>
+		<?php if( has_category() ) : ?>
+			<br /><span><?php the_category( ' ' ); ?></span>
+		<?php endif; ?>
+		<?php if( has_tag( has_tag() ) ): ?>
+			Tags: <span><?php the_tags('', ','); ?></span>
+		<?php endif; ?>
+	</p>
+	</div>
+	<div><?php the_excerpt(); ?></div>
+</article>

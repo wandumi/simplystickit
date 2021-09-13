@@ -24,40 +24,15 @@
                 <div class="container">
                    
                     <div class="row mt-5">
-                        <div class="col-12">
+                        
+                        <div class="col-12 col-lg-9 col-md-8">
 
                             <?php 
-                                if( have_posts() ) : while( have_posts() ): the_post(); ?>
-    
-                                    <article <?php post_class(); ?> >
-                                        <h2 class="text-black">
-                                            <a href="<?php the_permalink(); ?>">
-                                                <?php the_title(); ?>
-                                            </a>    
-                                        </h2>
-                                        <div class="post-thumbnail">
-                                            <a href="<?php the_permalink(); ?>">
-                                                <?php 
-                                                    if( has_post_thumbnail() ) :
-                                                        the_post_thumbnail('full');
-                                                    endif;
-                                                ?>
-                                            </a> 
-                                        </div>
-                                        <div class="meta">
-                                            <p>Publish by <?php the_author_posts_link(); ?> on <?php echo get_the_date(); ?>
-                                            <?php if( has_category() ) : ?>
-                                                <br /><span><?php the_category( ' ' ); ?></span>
-                                            <?php endif; ?>
-                                            <?php if( has_tag( has_tag() ) ): ?>
-                                                Tags: <span><?php the_tags('', ','); ?></span>
-                                            <?php endif; ?>
-                                        </p>
-                                        </div>
-                                        <div><?php the_excerpt(); ?></div>
-                                    </article>
-    
-                            <?php endwhile;
+                                if( have_posts() ) : while( have_posts() ): the_post(); 
+                            
+                                     get_template_part( 'template-parts/content/content' );
+
+                                endwhile;
                                 // Pagination for posts 
                                 the_posts_pagination( array(
                                     'prev_text' => 'Previous',
@@ -69,7 +44,11 @@
     
                             <?php endif; ?>
                         </div>
+                        <?php get_sidebar(); ?>
                     </div>
+
+                    
+                    
                 </div>
             </section> <!-- end of the featured product -->
             

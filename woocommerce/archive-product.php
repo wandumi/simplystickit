@@ -22,22 +22,11 @@ get_header( 'shop' );
 ?>
 
 <div class="container">
+        
+        <div class="row mt-5">
+            
 
-        <div class="row">
-            <div class="col-lg-3 col-md-4 order-2 order-md-1">
-                <?php 
-                    /**
-                     * Hook: woocommerce_sidebar.
-                     *
-                     * @hooked woocommerce_get_sidebar - 10
-                     */
-                    do_action( 'woocommerce_sidebar' );
-
-                
-                ?>
-            </div>
-
-            <div class="col-lg-9 col-md-8 order-1 order-md-2">
+            <div class="col-lg-12 col-12">
 
                 
                 <?php
@@ -125,6 +114,19 @@ get_header( 'shop' );
                 
                 ?>
         
+            </div>
+
+            <div class="col-lg-3 col-12 ">
+                <?php 
+                    /**
+                     * Hook: woocommerce_sidebar.
+                     *
+                     * @hooked woocommerce_get_sidebar - 10
+                     */
+                    do_action( 'woocommerce_sidebar' );
+
+                
+                ?>
             </div>
 
         </div>

@@ -17,13 +17,18 @@ get_header();
 
 			<div class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'Simply Stickit' ); ?></h1>
+					<h1>Page not found</h1>
+					<p>Unfortunately, the page you tried to reach does not exist on this site</p>
 				</header><!-- .page-header -->
 
-				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'SimplyStickit' ); ?></p>
-					<?php get_search_form(); ?>
-				</div><!-- .page-content -->
+				<?php 
+					the_widget( 'WP_Widget_Recent_Posts', array(
+						'title' => 'Take a Look at Our Latest Posts',
+						'number' => 3
+					) )
+				?>
+
+
 			</div><!-- .error-404 -->
 
 		</main><!-- #main -->
