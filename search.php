@@ -18,19 +18,18 @@
             <section class="default_posts">
                 <div class="container">
                    
-                    <div class="row mt-5">
-                        <div class="col-12">
-                            <div  class="d-flex mb-5">
-                                <div class="col- col-lg-6 col-md-12 col-sm-12 text-left">
+                    <div class="row my-5">
+                        <div class="col-lg-6 col-md-12 col-sm-12">
+                            <h2>Search results for: <span style="color: blue"> <?php echo get_search_query(); ?> </span> </h2>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12">
+                            <?php get_search_form(); ?>
+                        </div>
 
-                                    <h2>Search results for: <span style="color: blue"> <?php echo get_search_query(); ?> </span> </h2>
-                                </div>
-                                <div class="col-lg-6 col-md-12 col-sm-12 text-right">
-                                    <?php get_search_form(); ?>
-                                </div>
-
-                            </div>
                             
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
                             <?php
 
                                 if( have_posts() ) : while( have_posts() ): the_post(); 
@@ -46,7 +45,9 @@
                                 <p><?php esc_html_e( 'There are no results for your query.' ); ?></p>
     
                             <?php endif; ?>
+
                         </div>
+                        
                     </div>
                 </div>
             </section> <!-- end of the featured product -->

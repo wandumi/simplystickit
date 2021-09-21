@@ -23,7 +23,7 @@
             <section class="default_posts">
                 <div class="container">
                    
-                    <div class="row mt-5">
+                    <div class="row">
                         
                         <div class="col-12 col-lg-9 col-md-8">
 

@@ -11,7 +11,7 @@
 ?>
     <footer  >
        
-        <section class="footer-widgets mt-5">
+        <section class="footer-widgets">
             <div class="container">
                 <div class="row">
                     <?php if(is_active_sidebar('simply-stickit-footer-1') ): ?>

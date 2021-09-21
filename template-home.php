@@ -74,11 +74,11 @@
                 </div>
             </section><!-- end of the slider --> 
 
-            <div class="container">
+            <div class="container mt-4">
                 <div class="row">
                     <div class="col-12">
 
-                        <section class="categories mt-4">
+                        <section class="categories ">
                             
                             <?php
                                 $number_of_categories = get_theme_mod('set_categories_max_num', 4);

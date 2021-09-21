@@ -93,7 +93,7 @@
         // custome log sizez
         add_theme_support( 'custom-logo', array(
             'height'      => 152,
-            'width'       => 250,
+            'width'       => 200,
             'flex_height' => true,
             'flex_width'  => true
         ));
@@ -214,4 +214,22 @@
 
 
 
+    }
+
+    /**
+     * Replace the home link URL
+     */
+    add_filter( 'woocommerce_breadcrumb_home_url', 'simply_stickit_breadrumb_home_url' );
+    function simply_stickit_breadrumb_home_url() {
+        return 'https://simplytest.questweb.co.za/products/';
+    }
+
+    /**
+     * Rename "home" in breadcrumb
+     */
+    add_filter( 'woocommerce_breadcrumb_defaults', 'simply_stickit_breadcrumb_home_text' );
+    function simply_stickit_breadcrumb_home_text( $defaults ) {
+        // Change the breadcrumb home text from 'Home' to 'Products'
+        $defaults['home'] = 'Products';
+        return $defaults;
     }

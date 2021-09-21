@@ -21,11 +21,11 @@
 </head>
 <body <?php body_class(); ?> >
     <div id="page" class="site">
-        <header>
+        <header >
            
-            <section class="top-bar m-3">
+            <section class="top-bar mb-3 p-2">
                 <div class="container ">
-                    <div class="row ">
+                    <div class="row pt-5">
                         <div class="brand col-lg-6 col-md-12 col-sm-12">
                             <a href="<?php echo home_url( '/' ) ?>" >
                             
@@ -44,7 +44,7 @@
                         
                         <div class="col-lg-6 col-md-12 col-sm-12 ">
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-lg-4 col-md-12 col-sm-12">
                                
                                     <div class="navbar-expand">
                                         <ul class="navbar-nav">
@@ -64,11 +64,13 @@
                                     </div>
 
                                 </div>
-                               <div class="col-lg-8">
-                                   <div class="float-right">
-                                       <?php get_search_form(); ?>
+                               <div class="col-lg-8 col-md-12 col-sm-12 mb-sm-3">
+                                    <div class="d-flex">
+                                        <?php get_search_form(); ?>
+
+                                    </div>
        
-                                   </div>
+                                   
 
                                </div>
                             </div>
@@ -76,13 +78,14 @@
                         </div>
                        
                     </div>
+                </div>
             </section>
 
             <section class="main-menu-container">
                 <div class="container ">
                     <div class="row">
-                        <div class="second-column col-md-9 col-lg-12">
-                            <div class="row p-0">
+                        <div class="second-column col-12 col-md-9 col-lg-12">
+                            <div class="row p-2">
                                
                                 <div class="col-md-12">
                                     <div class="row">
