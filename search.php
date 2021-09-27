@@ -16,9 +16,9 @@
         <main>
            
             <section class="default_posts">
-                <div class="container">
+                <div class="container my-5">
                    
-                    <div class="row my-5">
+                    <div class="row">
                         <div class="col-lg-6 col-md-12 col-sm-12">
                             <h2>Search results for: <span style="color: blue"> <?php echo get_search_query(); ?> </span> </h2>
                         </div>
@@ -29,7 +29,7 @@
                             
                     </div>
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-12 col-md-12 col-sm-12">
                             <?php
 
                                 if( have_posts() ) : while( have_posts() ): the_post(); 

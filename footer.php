@@ -9,13 +9,13 @@
 
     */
 ?>
-    <footer  >
+    <footer class="col-12" >
        
         <section class="footer-widgets">
             <div class="container">
                 <div class="row">
                     <?php if(is_active_sidebar('simply-stickit-footer-1') ): ?>
-                        <div class="col-md-4 col-12">
+                        <div class="col-md-4 col-lg-12">
                             <?php dynamic_sidebar('simply-stickit-footer-1') ?>
 
                         </div>
@@ -36,7 +36,7 @@
             </div>
         </section>
 
-        <section class="copyright">
+        <section class="copyright col-12">
             <div class="container">
                 <div class="row">
                     <div class="copyright-text col-lg-6 col-md-4 col-sm-12">
