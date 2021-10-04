@@ -9,7 +9,7 @@
 
     */
 ?>
-    <footer class="col-12" >
+    <footer  >
        
         <section class="footer-widgets">
             <div class="container">
@@ -36,7 +36,7 @@
             </div>
         </section>
 
-        <section class="copyright col-12">
+        <section class="copyright">
             <div class="container">
                 <div class="row">
                     <div class="copyright-text col-lg-6 col-md-4 col-sm-12">
