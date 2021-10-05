@@ -93,7 +93,7 @@
         // custome log sizez
         add_theme_support( 'custom-logo', array(
             'height'      => 152,
-            'width'       => 150,
+            'width'       => 200,
             'flex_height' => true,
             'flex_width'  => true
         ));
