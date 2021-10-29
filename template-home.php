@@ -9,7 +9,7 @@
 ?>
     <div class="container">
         <main>
-            <div class="mt-5">
+            <div class="">
                 
                 <section>
                     <div class="row">
@@ -21,8 +21,8 @@
                                 ?>
                                 
                             <?php if($homepage_image) : ?>
-                                <div class="d-flex justify-content-center">
-                                    <img src="<?php echo $homepage_image ?>" 
+                                <div class="d-flex justify-content-center px-3">
+                                    <img src="<?php echo $homepage_image ?>" style="height:500px;" 
                                     class="attachment-thumbnail size-thumbnail aligncenter" ... />
 
                                 </div>
@@ -42,13 +42,13 @@
                             $columns_of_categories = get_theme_mod('set_categories_max_col',4);
                         ?>
                         <div class="row pt-5">
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 home-header">
                                 <h2>Product Categories</h2>
                             </div>
 
                         </div>
                         <div class="row">
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 main-woocommerce">
                                 <?php echo do_shortcode( '[product_categories limit=" '. $number_of_categories .' " columns=" '. $columns_of_categories .' " orderby="" hide_empty=1 parent="0"]' ) ?>
 
                             </div>

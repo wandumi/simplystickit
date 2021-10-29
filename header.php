@@ -65,7 +65,7 @@
 
                                 </div>
                                <div class="col-lg-8 col-md-12 col-sm-12 mb-sm-3">
-                                    <div class="d-flex">
+                                    <div class="d-flex search-container">
                                         <?php get_search_form(); ?>
 
                                     </div>
@@ -88,7 +88,7 @@
                             <div class="row p-2">
                                
                                 <div class="col-md-12">
-                                    <div class="row">
+                                    <div class="row d-flex justify-content-end">
                                         <div class="col-9 col-md-6">
                                             <nav class="main_menu navbar navbar-expand-md navbar-light" role="navigation">
                                                 
