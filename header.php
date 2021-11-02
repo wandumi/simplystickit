@@ -90,7 +90,7 @@
                                 <div class="col-md-12">
                                     <div class="row d-flex justify-content-end">
                                         <div class="col-9 col-md-6">
-                                            <nav class="main_menu navbar navbar-expand-md navbar-light" role="navigation">
+                                            <nav class="main-menu navbar navbar-expand-md navbar-light" role="navigation">
                                                 
                                                     <!-- Brand and toggle get grouped for better mobile display -->
                                                     <button class="navbar-toggler ml-lg-auto" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'your-theme-slug' ); ?>">

@@ -46,6 +46,8 @@
         wp_enqueue_script( 'flexslider-min-js', get_template_directory_uri() . '/inc/flexslider/jquery.flexslider-min.js', array( 'jquery' ), '', true );
         wp_enqueue_style( 'flexslider-css', get_template_directory_uri() . '/inc/flexslider/flexslider.css', array(), '', 'all' );
         wp_enqueue_script( 'flexslider.js', get_template_directory_uri() . '/inc/flexslider/flexslider.js', '', true );
+
+        wp_enqueue_script( 'scripts', get_template_directory_uri() . '/inc/js/scripts.js', '', true );
     }
 
     add_action('wp_enqueue_scripts', 'simply_stickit_scripts');
