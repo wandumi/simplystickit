@@ -48,6 +48,11 @@
         wp_enqueue_script( 'flexslider.js', get_template_directory_uri() . '/inc/flexslider/flexslider.js', '', true );
 
         wp_enqueue_script( 'scripts', get_template_directory_uri() . '/inc/js/scripts.js', '', true );
+
+        
+        wp_enqueue_style( 'custom-fa', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css' );
+         
+        
     }
 
     add_action('wp_enqueue_scripts', 'simply_stickit_scripts');
@@ -94,9 +99,9 @@
 
         // custome log sizez
         add_theme_support( 'custom-logo', array(
-            'height'      => 180,
-            'width'       => 500,
-            'flex_height' => true,
+            'height'      => 100,
+            'width'       => 100,
+            'flex_height' => false,
             'flex_width'  => true
         ));
 

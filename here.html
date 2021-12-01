@@ -1,0 +1,118 @@
+<section>
+    <div class="container">
+
+        <div class="top-menu">
+            <!-- Logo -->
+            <div>
+                <a href="<?php echo home_url( '/' ) ?>">
+
+
+                    <?php if( has_custom_logo() ) : ?>
+                    <?php the_custom_logo(); ?>
+
+                    <?php else: ?>
+                    <p class="site-title">
+                        <?php bloginfo( 'title' ) ?>
+                        <span><?php bloginfo('description') ?></span>
+                    </p>
+                    <?php endif ?>
+                </a>
+            </div>
+
+            <!-- Login -->
+            <div>
+                <div class="login">
+
+
+                    <ul id="user-icon">
+                        <?php if( is_user_logged_in() ) : ?>
+                        <li>
+                            <a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id'))   ); ?>" class="nav-link">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo esc_url(  wp_logout_url( get_permalink( get_option( 'woocommerce_myaccount_page_id'))  )   ); ?>" class="nav-link">Logout</a>
+                        </li>
+                        <?php else: ?>
+                        <li>
+                            <a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id'))   ); ?>" class="nav-link">
+                                <i class="fas fa-user"></i>
+                            </a>
+                        </li>
+                        <?php endif ?>
+                    </ul>
+
+
+
+                    <a href="<?php echo wc_get_cart_url() ?>">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-items-count"><?php echo WC()->cart->get_cart_contents_count() ?></span>
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="main-menu-container">
+    <div class="container ">
+        <div class="row">
+            <div class="second-column col-12 col-md-9 col-lg-12">
+                <div class="row p-2">
+
+                    <div class="col-md-12">
+                        <div class="row d-flex justify-content-end">
+                            <div class="col-9 col-md-6">
+                                <nav class="main-menu navbar navbar-expand-md navbar-light" role="navigation">
+
+                                    <!-- Brand and toggle get grouped for better mobile display -->
+                                    <button class="navbar-toggler ml-lg-auto" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'your-theme-slug' ); ?>">
+                                            <span class="navbar-toggler-icon"></span>
+                                        </button>
+
+                                    <?php
+                                                wp_nav_menu( array(
+                                                    'theme_location'    => 'simply_stickit_main_menu',
+                                                    'depth'             => 3, 
+                                                    'container'         => 'div',
+                                                    'container_class'   => 'collapse navbar-collapse',
+                                                    'container_id'      => 'bs-example-navbar-collapse-1',
+                                                    'menu_class'        => 'nav navbar-nav',
+                                                    'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                                                    'walker'            => new WP_Bootstrap_Navwalker(),
+                                                ) );
+                                            ?>
+
+                                </nav>
+
+                            </div>
+                            <div class="account col-3 col-md-6 ">
+
+                                <div class="">
+                                    <?php //get_search_form(); ?>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

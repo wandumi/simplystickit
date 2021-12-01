@@ -23,31 +23,36 @@
     <div id="page" class="site">
         <header >
            
-            <section class="top-bar mb-3 p-2">
+            <section>
                 <div class="container ">
-                    <div class="row pt-5">
-                        <div class="brand col-lg-6 col-md-12 col-sm-12">
-                            <a href="<?php echo home_url( '/' ) ?>" >
-                            
+                    <div class="row p-5 ">
 
-                                <?php if( has_custom_logo() ) : ?>
-                                    <?php the_custom_logo(); ?>
-                            
-                            <?php else: ?>
-                                <p class="site-title">
-                                    <?php bloginfo( 'title' ) ?>
-                                    <span><?php bloginfo('description') ?></span>
-                                </p>
-                            <?php endif ?>
-                            </a>
+                        <div class="col-lg-8 col-md-12 col-sm-6 d-lg-inline-block d-md-inline-block d-sm-inline-block ">
+
+                             <div class="row">
+                                <a href="<?php echo home_url( '/' ) ?>" >
+                                
+    
+                                    <?php if( has_custom_logo() ) : ?>
+                                        <?php the_custom_logo(); ?>
+                                
+                                    <?php else: ?>
+                                        <p class="site-title">
+                                            <?php bloginfo( 'title' ) ?>
+                                            <span><?php bloginfo('description') ?></span>
+                                        </p>
+                                    <?php endif ?>
+                                </a>
+
+                            </div>
                         </div>
                         
-                        <div class="col-lg-6 col-md-12 col-sm-12 ">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="col-lg-4 col-md-12 col-sm-6  d-lg-inline-block d-none ">
+
+                            <div class="row d-flex align-content-center justify-content-lg-end justify-content-md-center">
                                
                                     <div class="navbar-expand">
-                                        <ul class="navbar-nav">
+                                        <ul class="navbar-nav ">
                                             <?php if( is_user_logged_in() ) : ?>
                                                 <li >
                                                     <a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id'))   ); ?>" class="nav-link">Dashboard</a>
@@ -57,22 +62,22 @@
                                                 </li>
                                             <?php else: ?>
                                                 <li >
-                                                    <a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id'))   ); ?>" class="nav-link">Login / Register</a>
+                                                    <a id="account" href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id'))   ); ?>" class="nav-link">Login</a>
                                                 </li>
                                             <?php endif ?>
                                         </ul>
                                     </div>
 
-                                </div>
-                               <div class="col-lg-8 col-md-12 col-sm-12 mb-sm-3">
+                                
+                               <!-- <div class="col-lg-8 col-md-12 col-sm-12 mb-sm-3">
                                     <div class="d-flex search-container">
-                                        <?php get_search_form(); ?>
+                                        <?php //get_search_form(); ?>
 
                                     </div>
        
                                    
 
-                               </div>
+                               </div> -->
                             </div>
 
                         </div>
@@ -89,7 +94,7 @@
                                
                                 <div class="col-md-12">
                                     <div class="row d-flex justify-content-end">
-                                        <div class="col-9 col-md-6">
+                                        <div class="col-8 col-md-6">
                                             <nav class="main-menu navbar navbar-expand-md navbar-light" role="navigation">
                                                 
                                                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -113,10 +118,32 @@
                                             </nav>
     
                                         </div>
-                                        <div class="account col-3 col-md-6 ">
-                                            <div class="cart float-right pt-3">
-                                                <a href="<?php echo wc_get_cart_url() ?>"><span class="cart-icon"></span></a>
-                                                <span class="items"><?php echo WC()->cart->get_cart_contents_count() ?></span>
+                                        
+                                        <div class="col-4 col-md-6 top-space">
+                                            <div class="d-flex align-items-center justify-content-end">
+                                                <div class="navbar-expand d-lg-none">
+                                                    <ul class="navbar-nav ">
+                                                        <?php if( is_user_logged_in() ) : ?>
+                                                            <li >
+                                                                <a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id'))   ); ?>" class="nav-link">Dashboard</a>
+                                                            </li>
+                                                            <li >
+                                                                <a href="<?php echo esc_url(  wp_logout_url( get_permalink( get_option( 'woocommerce_myaccount_page_id'))  )   ); ?>" class="nav-link">Logout</a>
+                                                            </li>
+                                                        <?php else: ?>
+                                                            <li >
+                                                                <a id="account" href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id'))   ); ?>" class="nav-link">
+                                                                <i class="user-icon fa fa-user"></i>
+                                                            </a>
+                                                            </li>
+                                                        <?php endif ?>
+                                                    </ul>
+                                                </div>
+                                                <div class="cart d-flex">
+                                                    <a href="<?php echo wc_get_cart_url() ?>"><i class="fa fa-shopping-cart cart-icon pr-1 "></i></a>
+                                                    <span class="items"><?php echo WC()->cart->get_cart_contents_count() ?></span>
+                                                </div>
+
                                             </div>
                                         </div>
 
@@ -131,6 +158,7 @@
                     </div>
                 </div>
             </section>
+
         </header>
 
         

@@ -35,6 +35,12 @@ h1 {
     padding-bottom: 37px;
 }
 
+.custom-logo {
+    display: block;
+    width: 70%;
+    height: auto;
+}
+
 .related-products {
     margin-top: 95px;
 }
@@ -52,6 +58,10 @@ h1 {
 button,
 input {
     padding: 4px;
+}
+
+#main {
+    padding: 20px;
 }
 
 .main-menu-container {
@@ -105,30 +115,48 @@ input {
     background-image: url('images/hamburger-menu.svg');
 }
 
+.p-5 {
+    padding: 2rem 1rem !important;
+}
+
 
 /* end of main menu */
-
-.cart .cart-icon {
-    background: url('images/cart.svg');
-    background-repeat: no-repeat;
-    height: 25px;
-    width: 25px;
-    display: inline-block;
-    vertical-align: bottom;
-    color: beige;
-}
 
 .cart .items {
     background-color: #986db4;
     color: #fff;
-    width: 20px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
     display: inline-block;
     text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.top-space {
+    padding-top: 18px;
+}
+
+.user-icon,
+.cart-icon {
+    font-size: 16px;
+    color: #000;
+}
+
+.user-icon:hover,
+.cart-icon:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+.user-icon:active,
+.cart-icon:active {
+    color: #fff;
 }
 
 
@@ -481,11 +509,6 @@ ul.wp-block-page-list li>a:hover {
 /* Mobile menu  */
 
 @media all and (max-width: 767px) {
-    .woocommerce .col2-set .col-1,
-    .woocommerce .col2-set .col-2 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
     .h1,
     h1 {
         font-size: 1.5rem;
@@ -498,9 +521,18 @@ ul.wp-block-page-list li>a:hover {
         padding-top: 6px;
     }
     .custom-logo {
+        display: block;
+        width: 90%;
         height: auto;
-        max-width: 230px;
-        max-height: none;
+        margin: 0 auto;
+    }
+    .top-space {
+        padding-top: 8px;
+    }
+    .woocommerce .col2-set .col-1,
+    .woocommerce .col2-set .col-2 {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
     .woocommerce .woocommerce-breadcrumb {
         font-size: 0.82em;
