@@ -9,7 +9,7 @@
 
     */
 ?>
-    <footer  >
+    <footer >
        
         <section class="footer-widgets">
             <div class="container">

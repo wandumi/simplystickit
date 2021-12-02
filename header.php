@@ -94,7 +94,8 @@
                                
                                 <div class="col-md-12">
                                     <div class="row d-flex justify-content-end">
-                                        <div class="col-8 col-md-6">
+                                        <div class="col-10 col-md-6">
+
                                             <nav class="main-menu navbar navbar-expand-md navbar-light" role="navigation">
                                                 
                                                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -119,7 +120,8 @@
     
                                         </div>
                                         
-                                        <div class="col-4 col-md-6 top-space">
+                                        <div class="col-2 col-md-6 top-space">
+
                                             <div class="d-flex align-items-center justify-content-end">
                                                 <div class="navbar-expand d-lg-none">
                                                     <ul class="navbar-nav ">

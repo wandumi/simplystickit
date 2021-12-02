@@ -26,7 +26,11 @@ body {
 
 .content-area {
     padding-top: 60px;
-    /* background-color: #fff; */
+    padding-bottom: 220px;
+}
+
+.card {
+    padding-bottom: 220px;
 }
 
 .h1,
@@ -55,13 +59,23 @@ h1 {
     width: 10vw;
 }
 
-button,
-input {
-    padding: 4px;
+.navbar {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }
 
-#main {
-    padding: 20px;
+.navbar-light .navbar-nav .nav-link {
+    text-transform: uppercase;
+}
+
+.main-menu ul li:hover {
+    background: #fff;
+    color: #000;
+}
+
+.navbar button,
+input {
+    padding: 4px;
 }
 
 .main-menu-container {
@@ -500,14 +514,6 @@ ul.wp-block-page-list li>a:hover {
     margin: 20px 17px;
 }
 
-
-/* .count {
-    display: none;
-} */
-
-
-/* Mobile menu  */
-
 @media all and (max-width: 767px) {
     .h1,
     h1 {
@@ -516,6 +522,10 @@ ul.wp-block-page-list li>a:hover {
     }
     .menu {
         padding-left: 17px;
+    }
+    .main-menu ul li:hover {
+        background: none;
+        color: #000;
     }
     .content-area {
         padding-top: 6px;
